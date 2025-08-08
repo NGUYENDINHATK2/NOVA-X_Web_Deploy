@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "default",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "tailwind.config.ts",
+    "css": "src/styles/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@/core/adnui/components",
+    "utils": "@core/adnui/lib/utils",
+    "ui": "@/core/adnui/components/ui",
+    "lib": "@/core/adnui/lib",
+    "hooks": "@/core/adnui/hooks"
+  },
+  "iconLibrary": "lucide"
+}

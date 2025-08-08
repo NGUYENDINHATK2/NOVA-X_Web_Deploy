@@ -1,0 +1,8 @@
+export {default as VideoOutline} from './VideoOutline'
+export {default as SearchOutline} from './SearchOutline'
+export {default as HomeOutline} from './HomeOutline'
+export {default as ShortOutline} from './ShortOutline'
+export {default as SubscribedOutline} from './SubscribedOutline'
+export {default as UserOutline} from './UserOutline'
+export {default as DashboardOutline} from './DashboardOutline'
+export {default as PingOutline} from './PingOutline'

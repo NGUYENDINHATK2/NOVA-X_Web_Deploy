@@ -1,0 +1,1 @@
+export {default as ParallelGalaxyLogo} from './ParallelGalaxyLogo.json'

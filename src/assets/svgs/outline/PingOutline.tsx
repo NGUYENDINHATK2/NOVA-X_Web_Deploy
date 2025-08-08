@@ -1,0 +1,23 @@
+import * as React from "react"
+import { SVGProps } from "react"
+const PingOutline = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={800}
+    height={800}
+    aria-hidden="true"
+    className="dark:bg-blue iconify iconify--solar"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <g fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M2 6a4 4 0 1 1 8 0v12a4 4 0 0 1-8 0z" />
+      <path d="m10 8.243 3.314-3.314a4 4 0 1 1 5.657 5.657L9.306 20.25" />
+      <path
+        d="M6 22h12a4 4 0 0 0 0-8h-2.5M7 18a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"
+        opacity={0.5}
+      />
+    </g>
+  </svg>
+)
+export default PingOutline
