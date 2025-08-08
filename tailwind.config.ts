@@ -178,6 +178,26 @@ const config: Config = {
   ],
   theme: {
     extend: {
+       keyframes: {
+        shimmer: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+        neonFlicker: {
+          "0%, 19%, 21%, 23%, 100%": { opacity: "1", textShadow: "0 0 8px rgba(255,255,255,0.9), 0 0 20px rgba(127,0,255,0.7)" },
+          "20%, 22%": { opacity: ".6", textShadow: "0 0 4px rgba(255,255,255,0.6)" }
+        },
+        float: {
+          "0%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-6px)" },
+          "100%": { transform: "translateY(0px)" }
+        }
+      },
+      animation: {
+        shimmer: "shimmer 1.8s linear infinite",
+        neonFlicker: "neonFlicker 3.5s ease-in-out infinite",
+        float: "float 4s ease-in-out infinite"
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
