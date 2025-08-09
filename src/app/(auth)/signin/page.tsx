@@ -7,6 +7,6 @@ export const metadata: Metadata = {
 };
 
 
-export default async function SignIn() {
+export default function SignIn() {
     return <SignInPage />;
 }

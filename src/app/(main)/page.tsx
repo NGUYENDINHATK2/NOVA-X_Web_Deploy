@@ -14,9 +14,9 @@ type Props = {
 
 function Home({ data }: Props) {
   return (
-    <AuthGuard>
+    // <AuthGuard>
       <ExampleClientComponent />
-    </AuthGuard>
+    // </AuthGuard>
   );
 }
 
