@@ -7,7 +7,6 @@ import { Toaster } from '@/core/adnui/components/ui/sonner';
 import Loading from './loading';
 import { UILoveRenderer } from '@/core/ui/UILove/UILoveRenderer';
 import { UILoadingRenderer } from '@/core/ui/UILoading';
-import CursorGlow from '@/core/ui/CursorGlow/CursorGlow';
 const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Nova-X',
@@ -30,7 +29,6 @@ export default  function RootLayout({
                 <Toaster />
                  <UILoveRenderer />
                  <UILoadingRenderer />
-                <CursorGlow size={180} color="138, 92, 255" blur={48} opacity={0.28} />
               </>
             </Suspense>
         </body>

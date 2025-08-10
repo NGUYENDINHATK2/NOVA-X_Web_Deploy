@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Button } from '@/core/adnui/components/ui/button';
 import React from 'react';
 import { motion } from 'framer-motion';
+import CursorGlow from '@/core/ui/CursorGlow/CursorGlow';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -159,6 +160,7 @@ const HomePage = () => {
       <footer className="bg-[#0b0b0f] py-6 text-center text-gray-500 text-xs sm:text-sm">
         © {new Date().getFullYear()} Nova-X. Tất cả quyền được bảo lưu.
       </footer>
+     <CursorGlow size={180} color="138, 92, 255" blur={48} opacity={0.28} />
     </div>
   );
 };
