@@ -1,6 +1,4 @@
 'use client';
-import Lottie from "lottie-react";
-import Link from "next/link";
 
 export default function Custom404() {
     return <div className="h-screen w-screen flex flex-1 flex-col items-center justify-center p-36">

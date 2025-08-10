@@ -28,7 +28,6 @@ export default  function RootLayout({
               <>
                 <main>{children}</main>
                 <Toaster />
-                 <UILoveRenderer />
                  <UILoadingRenderer />
               </>
             </Suspense>
