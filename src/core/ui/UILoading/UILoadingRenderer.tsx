@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { loading } from "./loading";
 import { loadingEvents } from "./loading-events";
 import { AnimatePresence, motion } from "framer-motion";
-import Lottie from "lottie-react";
 import { NovaXLogo } from "@/assets/lotties";
 import dynamic from "next/dynamic";
 
@@ -27,7 +26,7 @@ export const UILoadingRenderer = () => {
 
   return (
     <AnimatePresence>
-      {!visible && (
+      {visible && (
         <motion.div
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm"
           initial={{ opacity: 0 }}
