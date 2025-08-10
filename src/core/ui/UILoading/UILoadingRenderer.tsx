@@ -84,7 +84,7 @@ export const UILoadingRenderer = () => {
 
 export default UILoadingRenderer;
 
-const text = "NOVA-X";
+const text = "Nova-X";
 const letters = text.split("");
 
 const precomputedLetterVariants = letters.map((_, i) => ({

@@ -45,7 +45,7 @@ export function generateMetadata(): Metadata {
       type: "website",
       images: [
         {
-          url: "/images/nova-x_logo_text.png",
+          url: "/images/Nova-X_logo_text.png",
           width: 800,
           height: 600,
           alt: "Nova-X Logo",

@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import CursorGlow from "@/core/ui/CursorGlow/CursorGlow";
 import BlinkingStar from "@/core/ui/BlinkingStar/BlinkingStar";
 import Link from "next/link";
+import { useLove } from "@/core/ui";
 
 const containerVariants = {
   hidden: {},
@@ -45,7 +46,7 @@ const Header = () => {
           className="text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text font-extrabold text-2xl flex items-center gap-1"
           onClick={() => setMobileOpen(false)}
         >
-          NOVA-X
+          Nova-X
           <BlinkingStar style={{ fontSize: "1.2rem" }} />
         </Link>
 
@@ -66,9 +67,13 @@ const Header = () => {
 
         {/* Desktop Login Button */}
         <div className="hidden md:block">
-          <Button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm">
+          <Link
+            href="/signin"
+          >
+            <Button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm">
             Đăng nhập
           </Button>
+          </Link>
         </div>
 
         {/* Mobile Hamburger */}
@@ -128,8 +133,16 @@ const Header = () => {
 };
 
 const HomePage = () => {
+  const { show } = useLove();
+
   return (
-    <div className="bg-[#0b0b0f] text-white min-h-screen flex flex-col pt-16">
+    // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
+    <div
+      className="bg-[#0b0b0f] text-white min-h-screen flex flex-col pt-16"
+      onClick={(e) => {
+        show(e.clientX, e.clientY);
+      }}
+    >
       {/* Header */}
       <Header />
 
@@ -146,7 +159,7 @@ const HomePage = () => {
           className="text-4xl sm:text-6xl font-extrabold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent leading-tight relative inline-block"
           variants={itemVariants}
         >
-          NOVA-X
+          Nova-X
           <BlinkingStar
             style={{ position: "absolute", top: "-1.5rem", left: "-1rem" }}
           />
@@ -177,8 +190,8 @@ const HomePage = () => {
           className="mt-4 sm:mt-6 max-w-xl sm:max-w-2xl text-base sm:text-lg text-gray-300"
           variants={itemVariants}
         >
-          Nova-X là nền tảng giao tiếp thế hệ mới, lấy cảm hứng từ Discord, kết hợp
-          chat, voice, video và cộng đồng trong một ứng dụng duy nhất.
+          Nova-X là nền tảng giao tiếp thế hệ mới, lấy cảm hứng từ Discord, kết
+          hợp chat, voice, video và cộng đồng trong một ứng dụng duy nhất.
         </motion.p>
         <motion.div
           className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
@@ -262,6 +275,52 @@ const HomePage = () => {
           ))}
         </motion.div>
       </motion.section>
+      {/* Chat Preview */}
+      <motion.section
+        id="chatpreview"
+        className="py-16 sm:py-20 px-4 sm:px-6"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={containerVariants}
+      >
+        <motion.div
+          className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 sm:gap-12 items-center"
+          variants={containerVariants}
+        >
+          <motion.div variants={itemVariants}>
+            <Image
+              src="/images/chat-preview.png"
+              alt="Chat Preview"
+              width={600}
+              height={400}
+              className="rounded-lg shadow-lg w-full h-auto"
+            />
+          </motion.div>
+          <motion.div
+            className="text-center md:text-left"
+            variants={itemVariants}
+          >
+            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
+              Giao diện hiện đại & dễ dùng
+            </h3>
+            <p className="text-gray-400 mb-4 text-sm sm:text-base">
+              Nova-X được thiết kế để mọi người có thể bắt đầu trò chuyện ngay
+              lập tức mà không cần học cách sử dụng. Tất cả tính năng đều trực
+              quan và đẹp mắt.
+            </p>
+            <p className="text-gray-400 mb-4 text-sm sm:text-base">
+              Giao diện Nova-X tối ưu cho mọi thiết bị, từ điện thoại đến
+              desktop. Các kênh chat được phân loại rõ ràng, bạn dễ dàng theo
+              dõi và tham gia cuộc trò chuyện nhóm hay cá nhân một cách thuận
+              tiện.
+            </p>
+            <Button className="bg-purple-500 hover:bg-purple-600 w-full sm:w-auto">
+              Xem chi tiết
+            </Button>
+          </motion.div>
+        </motion.div>
+      </motion.section>
 
       {/* Video Call Section */}
       <motion.section
@@ -276,18 +335,30 @@ const HomePage = () => {
           className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 sm:gap-12 items-center"
           variants={containerVariants}
         >
-          <motion.div className="text-center md:text-left" variants={itemVariants}>
+          <motion.div
+            className="text-center md:text-left"
+            variants={itemVariants}
+          >
             <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
               Voice & Video mượt mà
             </h3>
             <p className="text-gray-400 mb-4 text-sm sm:text-base">
-              Không chỉ chat, Nova-X mang đến trải nghiệm voice & video chất lượng cao,
-              với độ trễ thấp và hỗ trợ chia sẻ màn hình để làm việc nhóm hoặc giải trí.
+              Không chỉ chat, Nova-X mang đến trải nghiệm voice & video chất
+              lượng cao, với độ trễ thấp và hỗ trợ chia sẻ màn hình để làm việc
+              nhóm hoặc giải trí.
             </p>
             <ul className="list-disc list-inside text-gray-400 mb-4 text-sm sm:text-base">
-              <li>Chất lượng âm thanh, video HD mượt mà, giảm thiểu lag và giật.</li>
-              <li>Hỗ trợ gọi nhóm lên tới 50 người với tùy chọn quản lý người tham gia.</li>
-              <li>Chia sẻ màn hình, bảng trắng trực tuyến giúp làm việc nhóm hiệu quả.</li>
+              <li>
+                Chất lượng âm thanh, video HD mượt mà, giảm thiểu lag và giật.
+              </li>
+              <li>
+                Hỗ trợ gọi nhóm lên tới 50 người với tùy chọn quản lý người tham
+                gia.
+              </li>
+              <li>
+                Chia sẻ màn hình, bảng trắng trực tuyến giúp làm việc nhóm hiệu
+                quả.
+              </li>
             </ul>
             <Button className="bg-pink-500 hover:bg-pink-600 w-full sm:w-auto">
               Bắt đầu gọi ngay
@@ -324,16 +395,16 @@ const HomePage = () => {
           className="max-w-xl sm:max-w-2xl mx-auto mb-6 sm:mb-8 text-white/90 text-sm sm:text-base"
           variants={itemVariants}
         >
-          Hỗ trợ Windows, macOS, iOS và Android. Bắt đầu kết nối với bạn bè và cộng đồng
-          chỉ trong vài giây.
+          Hỗ trợ Windows, macOS, iOS và Android. Bắt đầu kết nối với bạn bè và
+          cộng đồng chỉ trong vài giây.
         </motion.p>
         <motion.p
           className="max-w-xl sm:max-w-2xl mx-auto mb-6 sm:mb-8 text-white/90 text-sm sm:text-base"
           variants={itemVariants}
         >
-          Nova-X hỗ trợ Windows 10 trở lên, macOS Catalina trở lên, iOS 13 trở lên và
-          Android 8 trở lên. Tải ứng dụng phù hợp và trải nghiệm các tính năng độc
-          đáo của chúng tôi trên mọi thiết bị bạn yêu thích.
+          Nova-X hỗ trợ Windows 10 trở lên, macOS Catalina trở lên, iOS 13 trở
+          lên và Android 8 trở lên. Tải ứng dụng phù hợp và trải nghiệm các tính
+          năng độc đáo của chúng tôi trên mọi thiết bị bạn yêu thích.
         </motion.p>
         <motion.div
           className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center"
@@ -399,8 +470,8 @@ const HomePage = () => {
                 Nova-X có hỗ trợ đa ngôn ngữ không?
               </h4>
               <p className="text-gray-400 text-sm sm:text-base">
-                Có, Nova-X hỗ trợ nhiều ngôn ngữ phổ biến và liên tục cập nhật để phục vụ
-                cộng đồng toàn cầu.
+                Có, Nova-X hỗ trợ nhiều ngôn ngữ phổ biến và liên tục cập nhật
+                để phục vụ cộng đồng toàn cầu.
               </p>
             </motion.div>
             <motion.div variants={itemVariants}>
@@ -408,8 +479,9 @@ const HomePage = () => {
                 Tôi có thể đồng bộ dữ liệu giữa các thiết bị không?
               </h4>
               <p className="text-gray-400 text-sm sm:text-base">
-                Nova-X đồng bộ tin nhắn, cài đặt và lịch sử cuộc gọi tự động trên tất cả
-                thiết bị của bạn, giúp bạn không bỏ lỡ bất kỳ cuộc trò chuyện nào.
+                Nova-X đồng bộ tin nhắn, cài đặt và lịch sử cuộc gọi tự động
+                trên tất cả thiết bị của bạn, giúp bạn không bỏ lỡ bất kỳ cuộc
+                trò chuyện nào.
               </p>
             </motion.div>
           </motion.div>
