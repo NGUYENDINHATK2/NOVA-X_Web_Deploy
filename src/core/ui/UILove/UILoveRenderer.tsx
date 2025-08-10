@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect, useState } from 'react';
-import { loveStore } from './loveStore';
+import React, { useEffect, useState } from "react";
+import { loveStore } from "./loveStore";
 
 export const UILoveRenderer = () => {
   const [hearts, setHearts] = useState(loveStore.getHearts());
@@ -9,7 +9,9 @@ export const UILoveRenderer = () => {
     const unsubscribe = loveStore.subscribe(() => {
       setHearts([...loveStore.getHearts()]);
     });
-    return () => { unsubscribe(); };
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   return (
@@ -17,15 +19,15 @@ export const UILoveRenderer = () => {
       {hearts.map((h) => (
         <span
           key={h.id}
-          className="absolute text-red-500 text-3xl animate-pop"
+          className="absolute from-indigo-400 via-purple-300 to-cyan-300text-3xl animate-pop"
           style={{
             left: h.x,
             top: h.y,
-            transform: 'translate(-50%, -50%)',
-            pointerEvents: 'none',
+            transform: "translate(-50%, -50%)",
+            pointerEvents: "none",
           }}
         >
-          ❤️
+          ✦
         </span>
       ))}
     </>
