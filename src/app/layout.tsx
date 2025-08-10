@@ -7,6 +7,7 @@ import { Toaster } from '@/core/adnui/components/ui/sonner';
 import Loading from './loading';
 import { UILoveRenderer } from '@/core/ui/UILove/UILoveRenderer';
 import { UILoadingRenderer } from '@/core/ui/UILoading';
+
 const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Nova-X',

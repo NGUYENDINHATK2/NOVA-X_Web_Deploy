@@ -1,11 +1,16 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { loading } from "./loading";
 import { loadingEvents } from "./loading-events";
 import { AnimatePresence, motion } from "framer-motion";
 import Lottie from "lottie-react";
 import { NovaXLogo } from "@/assets/lotties";
+import dynamic from "next/dynamic";
+
+const DynamicLottie = dynamic(() => import("lottie-react"), {
+  ssr: false,
+});
 
 export const UILoadingRenderer = () => {
   const [visible, setVisible] = useState(loading.isVisible());
@@ -22,7 +27,7 @@ export const UILoadingRenderer = () => {
 
   return (
     <AnimatePresence>
-      {visible && (
+      {!visible && (
         <motion.div
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm"
           initial={{ opacity: 0 }}
@@ -62,7 +67,7 @@ export const UILoadingRenderer = () => {
                   ease: "easeInOut",
                 }}
               >
-                <Lottie
+                <DynamicLottie
                   animationData={NovaXLogo}
                   loop={true}
                   className="w-96 h-60"
@@ -78,10 +83,11 @@ export const UILoadingRenderer = () => {
   );
 };
 
+export default UILoadingRenderer;
+
 const text = "NOVA-X";
 const letters = text.split("");
 
-// Tính toán trước các giá trị này, cố định cho server và client
 const precomputedLetterVariants = letters.map((_, i) => ({
   opacity: 0,
   x: Math.sin(i) * 200,
