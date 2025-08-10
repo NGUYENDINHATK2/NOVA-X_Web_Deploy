@@ -1,9 +1,11 @@
 import { GuildLayoutRoot } from "@/common/components";
 
 export default function GuildLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return <GuildLayoutRoot>{children}</GuildLayoutRoot>;
+  return (
+     <GuildLayoutRoot>{children}</GuildLayoutRoot>
+  );
 }

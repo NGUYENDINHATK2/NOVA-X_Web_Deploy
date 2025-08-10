@@ -1,13 +1,18 @@
-const GuildLayoutRoot: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+import { GuildSidebar } from "./components";
+
+interface IGuildLayoutRootProps {
+    children: React.ReactNode;
+}
+
+
+const GuildLayoutRoot  = ({ children }: IGuildLayoutRootProps) => {
   return (
     <div className="w-full h-full">
         <div className="w-full flex items-center justify-center p-2">
-            Máy chủ 1
+            <span className="text-sm">Máy chủ 1</span>
         </div>
         <div className="flex w-full">
-            <div>
-                jhgfd
-            </div>
+            <GuildSidebar />
             <div className="flex flex-1">
                  {children}
             </div>
