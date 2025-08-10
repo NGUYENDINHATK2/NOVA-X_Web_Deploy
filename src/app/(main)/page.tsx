@@ -1,10 +1,22 @@
+import { userApi } from '@/lib/services/modules';
+import { store } from '@/lib/services/store';
+import ExampleClientComponent from '@/modules/ExampleClientComponent/page';
+import type { Metadata } from 'next';
 import { withErrorHandling } from '@/common/hocs';
-import HomePage from '@/modules/Home/page';
+import type { IUser } from '@/common/types';
+import AuthGuard from '@/common/guards/AuthGuard';
 
+type Props = {
+  data: {
+    users: IUser[];
+  };
+};
 
-function Home() {
+function Home({ data }: Props) {
   return (
-      <HomePage />
+    <AuthGuard>
+      <ExampleClientComponent />
+    </AuthGuard>
   );
 }
 

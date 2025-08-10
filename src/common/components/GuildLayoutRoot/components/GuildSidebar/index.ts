@@ -1,1 +1,0 @@
-export { GuildSidebar } from './GuildSidebar';

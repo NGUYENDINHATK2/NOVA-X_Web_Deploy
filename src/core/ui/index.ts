@@ -3,4 +3,3 @@ export * from './UITextField';
 export * from './UIFormControl';
 export * from './UIIcon';
 export * from './UILove';
-export * from './CursorGlow';

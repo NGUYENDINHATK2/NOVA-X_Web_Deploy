@@ -17,7 +17,7 @@ export const UILoveRenderer = () => {
       {hearts.map((h) => (
         <span
           key={h.id}
-          className="absolute text-white font-semibold tracking-wider animate-float text-2xl animate-pop"
+          className="absolute text-red-500 text-3xl animate-pop"
           style={{
             left: h.x,
             top: h.y,
@@ -25,7 +25,7 @@ export const UILoveRenderer = () => {
             pointerEvents: 'none',
           }}
         >
-          ✦
+          ❤️
         </span>
       ))}
     </>

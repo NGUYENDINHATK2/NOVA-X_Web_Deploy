@@ -2,87 +2,90 @@ import type { Config } from 'tailwindcss';
 
 
 const BaseColors = {
-  white: '#E8E8F8', // trắng pha tím nhạt, dịu hơn trắng tinh
+  white: '#FFFFFF',
 
-  red100: '#4B1A1D',
-  red200: '#6E2529',
-  red300: '#932D32',
-  red400: '#BF3A3F',
-  red500: '#E25056',
-  red600: '#FF6B72',
+  red100: '#FFE1E7',
+  red200: '#FFC8D6',
+  red300: '#FF9CB3',
+  red400: '#FF2E68',
+  red500: '#E1024F',
+  red600: '#D1003F',
 
-  violet100: '#1B163D',
-  violet200: '#2C2375',
-  violet300: '#3F32B0',
-  violet400: '#5A45D3',
-  violet500: '#7A64F0',
-  violet600: '#9B8BFF',
+  violet100: '#E5E9FA',
+  violet200: '#CFD5F6',
+  violet300: '#9398E6',
+  violet400: '#7977DB',
+  violet500: '#695ECD',
+  violet600: '#5A4EB4',
 
-  green100: '#0B3D3A',
-  green200: '#166656',
-  green300: '#1D8B75',
-  green400: '#25B094',
-  green500: '#37E4B5',
-  green600: '#5FFFF1',
+  green100: '#E0F8E9',
+  green200: '#C3EFD4',
+  green300: '#95E0B3',
+  green400: '#5FC98A',
+  green500: '#40C174',
+  green600: '#30A65F',
 
-  yellow100: '#4A4530',
-  yellow200: '#6E683E',
-  yellow300: '#9C934F',
-  yellow400: '#CFC85E',
-  yellow500: '#F5EA72',
-  yellow600: '#FFF996',
+  yellow100: '#FFF9EB',
+  yellow200: '#FFEEC6',
+  yellow300: '#FFDB88',
+  yellow400: '#FFCC67',
+  yellow500: '#FFBF41',
+  yellow600: '#F8B83A',
 
-  orange100: '#3E2D1B',
-  orange200: '#644625',
-  orange300: '#926433',
-  orange400: '#C79A4F',
-  orange500: '#FFCC66',
-  orange600: '#FFE799',
+  orange100: '#FFEDD5',
+  orange200: '#FED8AA',
+  orange300: '#FEBB73',
+  orange400: '#FC943B',
+  orange500: '#FA781A',
+  orange600: '#EB5A0B',
 
-  blue100: '#0A1C44',
-  blue200: '#132B70',
-  blue300: '#1B40A1',
-  blue400: '#2B5BCD',
-  blue500: '#3D75F5',
-  blue600: '#5B94FF',
+  blue100: '#DFEAFA',
+  blue200: '#C6DAF7',
+  blue300: '#9FC2F1',
+  blue400: '#71A1E9',
+  blue500: '#4A7CE0',
+  blue600: '#3B64D5',
 
-  brand100: '#0F233F',
-  brand200: '#1E3A6D',
-  brand300: '#2C529A',
-  brand400: '#3B70C6',
-  brand500: '#4A8EFD',
-  brand600: '#5AA9FF',
-  brand700: '#72BFFF',
+  brand100: '#E1F8F5',
+  brand200: '#D1F0ED',
+  brand300: '#B9E8E4',
+  brand400: '#33BBB2',
+  brand500: '#00AA9F',
+  brand600: '#0AA095',
+  brand700: '#38DBD0',
 
-  gray50: '#12121E',
-  gray100: '#1B1B2F',
-  gray150: '#22223B',
-  gray200: '#2E2E4D',
-  gray300: '#464660',
-  gray400: '#5F5F80',
-  gray500: '#8B8BAA',
-  gray600: '#B2B2CC',
-  gray700: '#D3D3E5',
+  gray50: '#F2F5F7',
+  gray100: '#E7EAED',
+  gray150: '#E6E6E6',
+  gray200: '#D8DCDF',
+  gray300: '#B9BEC0',
+  gray400: '#999999',
+  gray500: '#646464',
+  gray600: '#3D3D3D',
+  gray700: '#202020',
 };
 
 const colorsConfig = {
   transparent: 'rgba(0,0,0,0)',
-  circleButtonBackground: '#1B1B2F', // nền button tối tím than
-  circleButtonColor: '#72BFFF', // màu sáng neon
-
-  bgOnboard: '#12121E',
-  bgProgressInActive: '#22223B',
-  bgVerifyCode: '#1E3A6D',
-  bgOtherContact: '#E25056',
-
-  borderNeutralDark: BaseColors.gray300,
+  circleButtonBackground: '#E1E1EF',
+  circleButtonColor: '#44427D',
+  bgOnboard: '#E8F3F1',
+  bgProgressInActive: '#ECECEC',
+  bgVerifyCode: '#EFF9F9',
+  bgOtherContact: '#EF3F47',
+  /**
+   * Semantic Colors
+   */
+  /* border color */
+  borderNeutralDark: BaseColors.gray200,
   borderNeutralLight: BaseColors.gray50,
-  borderSoftNeutral: BaseColors.gray150,
-  borderNeutralDisable: BaseColors.gray200,
+  borderSoftNeutral: BaseColors.gray100,
+  borderNeutralDisable: BaseColors.gray300,
   borderPrimary: BaseColors.brand500,
   borderDanger: BaseColors.red500,
 
-  fgBase: BaseColors.gray700,
+  /* foreground color: used for text, icon */
+  fgBase: BaseColors.white,
   fgWarning: BaseColors.orange500,
   fgInProgress: BaseColors.blue500,
   fgTenant: BaseColors.yellow500,
@@ -90,72 +93,80 @@ const colorsConfig = {
   fgDanger: BaseColors.red500,
   fgPrimary: BaseColors.brand500,
   fgSupplier: BaseColors.violet500,
-  fgHyperlink: '#72BFFF',
+  fgHyperlink: '#0D42FF',
 
-  fgNeutralDisable: BaseColors.gray400,
-  fgNeutralSubtle: BaseColors.gray500,
-  fgNeutralNormal: BaseColors.gray600,
-  fgNeutralEmphasis: BaseColors.gray700,
-  fgNeutralHighEmphasis: BaseColors.white,
+  fgNeutralDisable: BaseColors.gray300,
+  fgNeutralSubtle: BaseColors.gray400,
+  fgNeutralNormal: BaseColors.gray500,
+  fgNeutralEmphasis: BaseColors.gray600,
+  fgNeutralHighEmphasis: BaseColors.gray700,
 
-  bgBase: BaseColors.gray50,
+  /* background color: specially for link button */
 
-  bgWarningTonalDefault: BaseColors.orange200,
-  bgWarningTonalHover: BaseColors.orange300,
-  bgWarningTonalFocus: BaseColors.orange400,
+  bgBase: BaseColors.white,
+
+  /* warning */
+  bgWarningTonalDefault: BaseColors.orange100,
+  bgWarningTonalHover: BaseColors.orange200,
+  bgWarningTonalFocus: BaseColors.orange300,
 
   bgWarningSolidDefault: BaseColors.orange500,
-  bgWarningSolidHover: BaseColors.orange600,
-  bgWarningSolidFocus: BaseColors.orange100,
+  bgWarningSolidHover: BaseColors.orange400,
+  bgWarningSolidFocus: BaseColors.orange600,
 
-  bgSuccessTonalDefault: BaseColors.green200,
-  bgSuccessTonalHover: BaseColors.green300,
-  bgSuccessTonalFocus: BaseColors.green400,
+
+  /* success */
+  bgSuccessTonalDefault: BaseColors.green100,
+  bgSuccessTonalHover: BaseColors.green200,
+  bgSuccessTonalFocus: BaseColors.green300,
 
   bgSuccessSolidDefault: BaseColors.green500,
-  bgSuccessSolidHover: BaseColors.green600,
-  bgSuccessSolidFocus: BaseColors.green100,
+  bgSuccessSolidHover: BaseColors.green400,
+  bgSuccessSolidFocus: BaseColors.green600,
 
-  bgDangerTonalDefault: BaseColors.red200,
-  bgDangerTonalHover: BaseColors.red300,
-  bgDangerTonalFocus: BaseColors.red400,
+  /* danger */
+  bgDangerTonalDefault: BaseColors.red100,
+  bgDangerTonalHover: BaseColors.red200,
+  bgDangerTonalFocus: BaseColors.red300,
 
   bgDangerSolidDefault: BaseColors.red500,
-  bgDangerSolidHover: BaseColors.red600,
-  bgDangerSolidFocus: BaseColors.red100,
+  bgDangerSolidHover: BaseColors.red400,
+  bgDangerSolidFocus: BaseColors.red600,
 
-  bgPrimaryTonalDefault: BaseColors.brand200,
-  bgPrimaryTonalHover: BaseColors.brand300,
-  bgPrimaryTonalFocus: BaseColors.brand400,
+  /* primary */
+  bgPrimaryTonalDefault: BaseColors.brand100,
+  bgPrimaryTonalHover: BaseColors.brand200,
+  bgPrimaryTonalFocus: BaseColors.brand300,
 
   bgPrimarySolidDefault: BaseColors.brand500,
-  bgPrimarySolidHover: BaseColors.brand600,
-  bgPrimarySolidFocus: BaseColors.brand100,
+  bgPrimarySolidHover: BaseColors.brand400,
+  bgPrimarySolidFocus: BaseColors.brand600,
 
   bgPrimaryHighContrast: BaseColors.brand700,
 
   bgPrimaryDisable: BaseColors.brand300,
 
-  bgNeutralTonalDefault: BaseColors.gray100,
-  bgNeutralTonalHover: BaseColors.gray150,
-  bgNeutralSkeleton: BaseColors.gray200,
-  bgNeutralTonalFocus: BaseColors.gray300,
+  /* neutral */
+  bgNeutralTonalDefault: BaseColors.gray50,
+  bgNeutralTonalHover: BaseColors.gray100,
+  bgNeutralSkeleton: BaseColors.gray150,
+  bgNeutralTonalFocus: BaseColors.gray200,
   bgNeutralTonalDisable: BaseColors.gray400,
   bgNeutralDisable: BaseColors.gray200,
-  bgNeutralTonalSkeleton: BaseColors.gray150,
+  bgNeutralTonalSkeleton: BaseColors.gray100,
   bgNeutralSolidDefault: BaseColors.gray100,
 
-  bgOverlayDark: 'rgba(18,18,30, 0.9)', // overlay tối sâu, màu tím than
-  bgOverlayDarkish: 'rgba(18,18,30, 0.75)',
-  bgOverlayLight: 'rgba(18,18,30, 0.4)',
-  bgOverlaySemiTransparent: 'rgba(18,18,30, 0.6)',
+  /* overlay */
+  bgOverlayDark: 'rgba(0, 0, 0, 0.6)',
+  bgOverlayDarkish: 'rgba(0, 0, 0, 0.7)',
+  bgOverlayLight: 'rgba(0, 0, 0, 0.2)',
+  bgOverlaySemiTransparent: 'rgba(0, 0, 0, 0.40)',
 
-  bgInProgressTonalDefault: BaseColors.blue200,
+  bgInProgressTonalDefault: BaseColors.blue100,
   bgInProgressTonalFocus: BaseColors.blue300,
 
-  shadowNeutral: 'rgba(0,0,0,0.8)',
+  shadowNeutral: '#00000080',
 };
-
 
 const config: Config = {
   darkMode: ['class'],
@@ -167,26 +178,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-       keyframes: {
-        shimmer: {
-          "0%": { transform: "translateX(-100%)" },
-          "100%": { transform: "translateX(100%)" },
-        },
-        neonFlicker: {
-          "0%, 19%, 21%, 23%, 100%": { opacity: "1", textShadow: "0 0 8px rgba(255,255,255,0.9), 0 0 20px rgba(127,0,255,0.7)" },
-          "20%, 22%": { opacity: ".6", textShadow: "0 0 4px rgba(255,255,255,0.6)" }
-        },
-        float: {
-          "0%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-6px)" },
-          "100%": { transform: "translateY(0px)" }
-        }
-      },
-      animation: {
-        shimmer: "shimmer 1.8s linear infinite",
-        neonFlicker: "neonFlicker 3.5s ease-in-out infinite",
-        float: "float 4s ease-in-out infinite"
-      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

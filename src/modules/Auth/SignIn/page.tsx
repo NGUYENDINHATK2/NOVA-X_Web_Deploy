@@ -31,7 +31,7 @@ const SignInPage: React.FC = () => {
 
     return (
         // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
-        <div className="w-screen h-screen flex flex-col items-center justify-cente  bg-[#1d1d1d] r text-black px-2"
+        <div className="w-screen h-screen flex flex-col items-center justify-center text-black px-2"
             onClick={(e) => {
                 show(e.clientX, e.clientY);
             }}
