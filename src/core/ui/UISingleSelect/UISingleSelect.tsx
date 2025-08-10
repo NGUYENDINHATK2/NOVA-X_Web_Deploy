@@ -1,6 +1,7 @@
-import { JSX, useEffect, useMemo, useRef, useState } from "react";
+"use client"
+import { type JSX, useEffect, useMemo, useRef, useState } from "react";
 import { ESize } from "../Helpers/UIsize.enum";
-import { IUISingleSelectProps } from "./UISingleSelect.type";
+import type { IUISingleSelectProps } from "./UISingleSelect.type";
 import { twMerge } from "tailwind-merge";
 import clsx from "clsx";
 import { UISingleSelectSelected, UISingleSelectOption } from "./components";
