@@ -67,12 +67,10 @@ const Header = () => {
 
         {/* Desktop Login Button */}
         <div className="hidden md:block">
-          <Link
-            href="/signin"
-          >
+          <Link href="/signin">
             <Button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm">
-            Đăng nhập
-          </Button>
+              Đăng nhập
+            </Button>
           </Link>
         </div>
 
@@ -118,12 +116,14 @@ const Header = () => {
               </li>
             ))}
             <li>
-              <Button
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg mt-2"
-                onClick={() => setMobileOpen(false)}
-              >
-                Đăng nhập
-              </Button>
+              <Link href="/signin">
+                <Button
+                  className="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg mt-2"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Đăng nhập
+                </Button>
+              </Link>
             </li>
           </ul>
         </div>
@@ -190,7 +190,7 @@ const HomePage = () => {
           className="mt-4 sm:mt-6 max-w-xl sm:max-w-2xl text-base sm:text-lg text-gray-300"
           variants={itemVariants}
         >
-          Nova-X là nền tảng giao tiếp thế hệ mới, lấy cảm hứng từ Discord, kết
+          Nova-X là nền tảng giao tiếp thế hệ mới, kết
           hợp chat, voice, video và cộng đồng trong một ứng dụng duy nhất.
         </motion.p>
         <motion.div
