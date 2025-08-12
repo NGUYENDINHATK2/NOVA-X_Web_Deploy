@@ -1,0 +1,5 @@
+export default function GuildDetails() {
+    return <div className="flex flex-col items-center justify-center h-full">
+        jhhjg
+    </div>;
+}
